@@ -28,7 +28,8 @@ numOfOrderableInDep = numOfContinuousInDep + numOfOrdinalInDep
 numOfIndep = numOfOrderableInDep + numOfCategoricalInDep
 firstCategorical = numOfOrderableInDep
 
-data=pd.read_csv(fileName)
+originalData=pd.read_csv(fileName)
+data=pd.DataFrame.dropna(originalData)
 array = data.values
 
 # numOfKBestK = 3 Limiting SelectKBest features if we want a reduced set from transform
